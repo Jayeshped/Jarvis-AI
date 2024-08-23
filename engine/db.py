@@ -1,3 +1,4 @@
+import csv
 import sqlite3
 
 con= sqlite3.connect("jarvis.db")
@@ -28,22 +29,22 @@ cursor.execute(query)
 
 # Specify the column indices you want to import (0-based index)
 # Example: Importing the 1st and 3rd columns
-#desired_columns_indices = [0, 20]
+# desired_columns_indices = [0, 20]
 
 # Read data from CSV and insert into SQLite table for the desired columns
-#with open('contacts.csv', 'r', encoding='utf-8') as csvfile:
-#   csvreader = csv.reader(csvfile)
-#   for row in csvreader:
-#        selected_data = [row[i] for i in desired_columns_indices]
-#        cursor.execute(''' INSERT INTO contacts (id, 'name', 'mobile_no') VALUES (null, ?, ?);''', tuple(selected_data))
+# with open('contacts.csv', 'r', encoding='utf-8') as csvfile:
+#    csvreader = csv.reader(csvfile)
+#    for row in csvreader:
+#         selected_data = [row[i] for i in desired_columns_indices]
+#         cursor.execute(''' INSERT INTO contacts (id, 'name', 'mobile_no') VALUES (null, ?, ?);''', tuple(selected_data))
 
 # Commit changes and close connection
-#con.commit()
-#con.close()
+# con.commit()
+# con.close()
 
-#query = "INSERT INTO contacts VALUES (null,'priyanka', '7498116715','null')"
-#cursor.execute(query)
-#con.commit()
+# query = "INSERT INTO contacts VALUES (null,'Shankar', '83172 25250','null')"
+# cursor.execute(query)
+# con.commit()
 
 # query = 'manish'
 # query = query.strip().lower()
@@ -55,3 +56,7 @@ cursor.execute(query)
 #query="DROP TABLE contacts"
 #cursor.execute(query)
 #con.commit()
+
+# query="DELETE FROM contacts WHERE name = 'Shankar'"
+# cursor.execute(query)
+# con.commit()

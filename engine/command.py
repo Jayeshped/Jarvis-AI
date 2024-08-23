@@ -10,6 +10,7 @@ def speak(text):
     engine.setProperty('rate',174)
     eel.DisplayMessage(text)
     engine.say(text)
+    eel.receiverText(text)
     engine.runAndWait()
 
 
@@ -42,12 +43,16 @@ def takeCommand():
 #speak(text)
 
 @eel.expose
-def allCommands():
-    
-    try:
+def allCommands(message=1):
+    if message==1:
         query=takeCommand()
         print(query)
-        
+        eel.senderText(query)
+    else:
+        query=message
+        eel.senderText(query)    
+    try:
+
         if "open" in query:
             from engine.features import openCommand
             openCommand(query)
